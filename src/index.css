@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border: 214 32% 91%;
+  --background: 0 0% 100%;
+  --foreground: 210 40% 12%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  color: #0f2438;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #f2730a;
+  color: #ffffff;
+}
+
+/* Keyboard focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #f2730a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.font-display {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.font-mono-data {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.02em;
+}
+
+/* Custom technical scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #03080e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border: 2px solid #03080e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f2730a;
+}
+
+/* Blueprint grid background utility */
+.bg-blueprint {
+  background-image:
+    linear-gradient(rgba(11, 79, 156, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 79, 156, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-blueprint-dark {
+  background-image:
+    linear-gradient(rgba(242, 115, 10, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 115, 10, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Corner registration marks, used on hero + signature spec panels */
+.crop-marks {
+  position: relative;
+}
+.crop-marks::before,
+.crop-marks::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+.crop-marks::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #f2730a;
+  border-left: 2px solid #f2730a;
+}
+.crop-marks::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #f2730a;
+  border-right: 2px solid #f2730a;
+}
+
+/* Technical metal/glow cards */
+.glow-card {
+  position: relative;
+  background: rgba(3, 8, 14, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(242, 115, 10, 0.4) 0%, rgba(11, 79, 156, 0) 50%, rgba(255, 255, 255, 0.05) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.glow-card:hover {
+  border-color: rgba(242, 115, 10, 0.3);
+  box-shadow: 0 0 25px rgba(242, 115, 10, 0.15);
+  transform: translateY(-2px);
+}
+.glow-card:hover::after {
+  opacity: 1;
+}
+
+/* Micro-animations and effects */
+.text-balance {
+  text-wrap: balance;
+}
+
+.metallic-shine {
+  position: relative;
+  overflow: hidden;
+}
+.metallic-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+}
+.metallic-shine:hover::before {
+  left: 150%;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(242, 115, 10, 0.5);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(11, 79, 156, 0.5);
+}
