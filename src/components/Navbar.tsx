@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Gauge, Phone, Mail, Award, MessageSquare, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NAV_LINKS, COMPANY } from "@/data/site";
+import { NAV_LINKS, COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -34,8 +34,12 @@ export function Navbar() {
   };
 
   const handleWhatsAppInquiry = () => {
-    const message = encodeURIComponent(`Hello RR Engineering Works, I'm visiting your website and would like to request a quote/technical consultation.`);
-    window.open(`https://wa.me/919841027563?text=${message}`, "_blank");
+    if (!COMPANY.phoneAlt) {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    const message = encodeURIComponent(`Hello ${COMPANY.name}, I am visiting your website and would like to request a quote/technical consultation.`);
+    window.open(`https://wa.me/${COMPANY.phoneAlt.replace(/\D/g, "")}?text=${message}`, "_blank");
   };
 
   return (
@@ -64,10 +68,10 @@ export function Navbar() {
             </span>
             <span className="flex flex-col leading-none">
               <span className="font-display font-bold text-base sm:text-lg tracking-tight text-white">
-                RR Engineering
+                {COMPANY.shortName}
               </span>
               <span className="font-mono-data text-[10px] uppercase tracking-[0.14em] text-accent mt-0.5">
-                Works / Est. {COMPANY.founded}
+                {COMPANY.foundedDisplay}
               </span>
             </span>
           </a>
@@ -99,11 +103,11 @@ export function Navbar() {
               className="border-white/20 text-white bg-white/5 hover:bg-green-600 hover:border-green-500 font-display gap-2"
             >
               <MessageSquare className="h-4 w-4" />
-              WhatsApp
+              Contact
             </Button>
             <Button asChild size="sm" className="bg-accent hover:bg-accent-hover text-white font-display">
               <a href="#configurator" onClick={() => handleNavClick("#configurator")}>
-                Configure RFQ
+                Send RFQ
               </a>
             </Button>
           </div>
@@ -172,14 +176,14 @@ export function Navbar() {
                     className="bg-green-600 hover:bg-green-700 text-white font-display text-base py-6 flex-1 gap-2.5"
                   >
                     <MessageSquare className="h-5 w-5" />
-                    Instant WhatsApp Enquiry
+                    Contact / WhatsApp Enquiry
                   </Button>
                   <Button
                     asChild
                     className="bg-accent hover:bg-accent-hover text-white font-display text-base py-6 flex-1"
                   >
                     <a href="#configurator" onClick={() => handleNavClick("#configurator")}>
-                      Start Interactive RFQ
+                      Start Technical RFQ
                     </a>
                   </Button>
                 </motion.div>
@@ -199,20 +203,20 @@ export function Navbar() {
                   </div>
 
                   <h3 className="font-display text-xl font-bold text-white mb-3">
-                    Domestic &amp; Export Enquiry Support
+                    Cladding, Welding &amp; Machining Enquiry Support
                   </h3>
                   <p className="text-sm text-white/60 leading-relaxed mb-6">
-                    Share the size, pressure class, material, media and quantity. Our team will help clarify the requirement before pricing and dispatch planning.
+                    Share the component, material, process expectation, drawings and quantity. The enquiry can then be reviewed against the company capability profile.
                   </p>
 
                   <div className="flex flex-col gap-4 border-t border-white/5 pt-6 text-white/70">
                     <div className="flex items-center gap-3">
                       <Phone className="h-4.5 w-4.5 text-accent shrink-0" />
-                      <span className="text-sm font-mono-data">{COMPANY.phone} / {COMPANY.phoneAlt}</span>
+                      <span className="text-sm font-mono-data">{COMPANY.phoneAlt || "Phone pending confirmation"}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Mail className="h-4.5 w-4.5 text-accent shrink-0" />
-                      <span className="text-sm font-mono-data">{COMPANY.email}</span>
+                      <span className="text-sm font-mono-data">{COMPANY.email || "Email pending confirmation"}</span>
                     </div>
                   </div>
                 </div>
@@ -220,13 +224,13 @@ export function Navbar() {
                 <div className="rounded-xl bg-navy-950 border border-white/5 p-5 mt-8">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-white/50 font-mono-data">BUYER ACCESS</span>
-                    <span className="text-[10px] bg-accent/20 text-accent font-bold px-2 py-0.5 rounded font-mono-data">ASME/API</span>
+                    <span className="text-[10px] bg-accent/20 text-accent font-bold px-2 py-0.5 rounded font-mono-data">PDF</span>
                   </div>
                   <p className="text-xs text-white/60 leading-relaxed mb-3.5">
-                    Use the product section and RFQ form to send the details needed for a practical quotation discussion.
+                    Use the capability section and RFQ form to send the details needed for technical review.
                   </p>
                   <Button asChild size="sm" variant="outline" className="w-full text-xs font-display border-white/10 hover:bg-white hover:text-navy">
-                    <a href="#resources" onClick={() => handleNavClick("#resources")}>
+                    <a href="#configurator" onClick={() => handleNavClick("#configurator")}>
                       <Download className="h-3.5 w-3.5 mr-1.5" /> Open RFQ form
                     </a>
                   </Button>

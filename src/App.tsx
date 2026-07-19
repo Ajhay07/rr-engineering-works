@@ -9,6 +9,7 @@ import { About } from "@/components/sections/About";
 import { Products } from "@/components/sections/Products";
 import { Industries } from "@/components/sections/Industries";
 import { Manufacturing } from "@/components/sections/Manufacturing";
+import { ProcessPortfolio } from "@/components/sections/ProcessPortfolio";
 import { Quality } from "@/components/sections/Quality";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Resources } from "@/components/sections/Resources";
@@ -40,6 +41,7 @@ function App() {
               setSelectedValveId={setSelectedValveId}
             />
             <Manufacturing />
+            <ProcessPortfolio />
             <Quality />
             <Industries />
             <WhyChooseUs />

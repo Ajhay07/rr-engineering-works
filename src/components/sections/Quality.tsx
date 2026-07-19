@@ -7,17 +7,17 @@ const QUALITY_POINTS = [
   {
     icon: ClipboardCheck,
     title: "Material review",
-    text: "Incoming material and bought-out components are checked against the purchase specification before machining or assembly starts.",
+    text: "Material grade, component condition and customer specification are reviewed before selecting the welding or machining route.",
   },
   {
     icon: Gauge,
-    title: "Pressure testing",
-    text: "Shell and seat tests can be planned against the applicable valve standard and customer inspection requirement.",
+    title: "Process control",
+    text: "Welding, cladding, heat treatment and machining requirements are planned around the component and inspection expectation.",
   },
   {
     icon: FileText,
     title: "Dispatch documents",
-    text: "Orders can be supported with test references, packing details and material traceability records where specified.",
+    text: "The profile references production, testing, certification and documentation support according to customer requirements.",
   },
 ];
 
@@ -27,8 +27,8 @@ export function Quality() {
       <div className="container">
         <SectionHeading
           eyebrow="Quality and documentation"
-          title="A practical inspection path before the valve leaves the works"
-          description="Industrial buyers do not only buy a valve; they need confidence that the supplied item matches the duty, paperwork and dispatch requirement. This section keeps that promise specific and realistic."
+          title="A practical inspection path before components leave the works"
+          description="The supplied profile states ISO 9001:2015 quality management, CMM inspection and welding to radiographic quality. Formal certificate scope and document numbers still need client confirmation."
           className="mb-14"
         />
 
@@ -75,7 +75,7 @@ export function Quality() {
               <div className="border border-slate-200 bg-navy p-7 text-white sm:p-8">
                 <h3 className="font-display text-xl font-semibold">Common test and paperwork references</h3>
                 <p className="mt-3 text-sm leading-7 text-white/68">
-                  Final testing and documentation depend on valve type, order scope and customer specification. These are the references commonly discussed during RFQ review.
+                  Final testing and documentation depend on component type, process route, order scope and customer specification. These are the references explicitly supported by the supplied profile.
                 </p>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {TESTING_STANDARDS.map((standard) => (

@@ -1,6 +1,7 @@
-import { Target, Eye, Factory } from "lucide-react";
+import { AlertCircle, Eye, Factory, Target } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
+import { COMPANY } from "@/data/company";
 import { MILESTONES } from "@/data/content";
 
 export function About() {
@@ -10,42 +11,34 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <Reveal className="relative crop-marks rounded-xl overflow-hidden order-2 lg:order-1">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
-              alt="RR Engineering Works manufacturing facility floor"
+              src="/company-profile/pdf-page-07-image-01.jpg"
+              alt="Raghav Engineering metal working and metallurgy profile artwork"
               className="w-full aspect-[4/3] object-cover"
               loading="lazy"
             />
             <div className="absolute bottom-4 left-4 font-mono-data text-[10px] uppercase tracking-wider text-white bg-navy/70 backdrop-blur px-2.5 py-1 rounded">
-              Kanchipuram Manufacturing Facility
+              Official Profile Visual / Metal Working
             </div>
           </Reveal>
 
           <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 font-mono-data text-xs font-medium uppercase tracking-[0.18em] mb-4 text-primary">
               <span className="h-px w-6 bg-accent" />
-              About RR Engineering Works
+              About {COMPANY.name}
             </div>
             <Reveal>
               <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-[1.15] text-navy text-balance">
-                Two decades of engineering valves that hold the line under pressure
+                Advanced welding, overlay cladding and machining from Alapakkam, Chennai
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 text-base sm:text-lg text-steel leading-relaxed">
-                Since {2003}, RR Engineering Works has built a manufacturing
-                practice around one principle: a valve is only as reliable
-                as the discipline behind it. From our facility in
-                Kanchipuram, Tamil Nadu, we design and manufacture industrial
-                valves engineered for the pressures, temperatures and media
-                that define critical process industries.
+                The official company profile describes {COMPANY.name} as an industry specialised in nickel based overlay cladding and cobalt based hard facing, supported by welding, fabrication and precision machining capability.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <p className="mt-4 text-base sm:text-lg text-steel leading-relaxed">
-                Our in-house casting, CNC machining, and testing capabilities
-                let us control every variable that determines valve
-                performance - from raw material certification to final
-                hydrostatic test - before a single product leaves our floor.
+                The facility profile lists GTAW, SMAW, GMAW, FCAW, PTAW, SAW, AUTO-MIG, Hot Wire TIG, robotic TIG/MIG, CNC turning, VMC, horizontal boring, VTL, centre lathe, planning, radial drilling and heat treatment processes.
               </p>
             </Reveal>
 
@@ -53,20 +46,18 @@ export function About() {
               <Reveal delay={0.2}>
                 <div className="rounded-lg border border-line p-5 bg-primary-50/40">
                   <Target className="h-5 w-5 text-primary mb-3" />
-                  <h3 className="font-display font-semibold text-navy mb-1.5">Our Mission</h3>
+                  <h3 className="font-display font-semibold text-navy mb-1.5">Core Focus</h3>
                   <p className="text-sm text-steel leading-relaxed">
-                    Engineer dependable valve solutions that keep critical
-                    infrastructure running safely, on every continent we serve.
+                    Deliver advanced welding and machining solutions for customer-specified components and complex materials.
                   </p>
                 </div>
               </Reveal>
               <Reveal delay={0.25}>
                 <div className="rounded-lg border border-line p-5 bg-primary-50/40">
                   <Eye className="h-5 w-5 text-primary mb-3" />
-                  <h3 className="font-display font-semibold text-navy mb-1.5">Our Vision</h3>
+                  <h3 className="font-display font-semibold text-navy mb-1.5">Future Direction</h3>
                   <p className="text-sm text-steel leading-relaxed">
-                    To be India's most trusted valve manufacturing partner
-                    for export-grade industrial and process applications.
+                    The profile mentions laser cladding as a future advancement and development-stage capability.
                   </p>
                 </div>
               </Reveal>
@@ -75,8 +66,8 @@ export function About() {
         </div>
 
         <SectionHeading
-          eyebrow="Company Timeline"
-          title="Milestones that shaped our manufacturing capability"
+          eyebrow="Company Notes"
+          title="Timeline and profile details that need careful publication"
           className="mb-14"
         />
 
@@ -86,13 +77,13 @@ export function About() {
             style={{ top: "1.65rem" }}
             aria-hidden="true"
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
             {MILESTONES.map((milestone, i) => (
-              <Reveal key={milestone.year} delay={i * 0.08}>
+              <Reveal key={milestone.title} delay={i * 0.08}>
                 <div className="relative pl-0 lg:pl-0">
                   <div className="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-3">
                     <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white shrink-0">
-                      <Factory className="h-4 w-4" />
+                      {i === 0 ? <AlertCircle className="h-4 w-4" /> : <Factory className="h-4 w-4" />}
                     </div>
                     <span className="font-mono-data text-sm font-semibold text-accent">
                       {milestone.year}

@@ -30,9 +30,9 @@ export function Products({ onConfigureValve }: ProductsProps) {
 
       <div className="container relative z-10">
         <SectionHeading
-          eyebrow="Technical Catalog"
-          title="Engineered Valve Solutions for Demanding Process Lines"
-          description="Click through our precision industrial valve categories below to view full mechanical details, application profiles, and technical datasheets."
+          eyebrow="Capability Portfolio"
+          title="Overlay cladding, specialised welding and machining capabilities"
+          description="Select a capability to review the authentic process areas described in the official company profile."
           className="mb-16"
         />
 
@@ -69,7 +69,7 @@ export function Products({ onConfigureValve }: ProductsProps) {
                 <div className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 mb-6 text-accent">
                   <Cpu className="h-3.5 w-3.5" />
                   <span className="font-mono-data text-[10px] uppercase tracking-wider font-bold">
-                    CAD Verified Specs
+                    PDF Verified Capability
                   </span>
                 </div>
 
@@ -91,32 +91,32 @@ export function Products({ onConfigureValve }: ProductsProps) {
                     {/* Technical Specification Grid */}
                     <div className="mb-7">
                       <h4 className="font-mono-data text-[10px] uppercase tracking-wider text-slate-400 mb-3">
-                        Technical Parameters
+                        Process Parameters
                       </h4>
                       <dl className="grid grid-cols-2 gap-4 rounded-xl bg-slate-50 p-4 border border-slate-200/60 font-mono-data text-xs">
                         <div>
                           <dt className="text-slate-400 uppercase text-[9px] tracking-wider mb-1">
-                            Materials available
+                            Materials / alloys
                           </dt>
                           <dd className="text-navy font-bold leading-tight">{activeProduct.material}</dd>
                         </div>
                         <div>
                           <dt className="text-slate-400 uppercase text-[9px] tracking-wider mb-1">
-                            Pressure rating
+                            Process route
                           </dt>
-                          <dd className="text-navy font-bold leading-tight">{activeProduct.pressureRating}</dd>
+                          <dd className="text-navy font-bold leading-tight">{activeProduct.process}</dd>
                         </div>
                         <div className="border-t border-slate-200 pt-3 mt-1">
                           <dt className="text-slate-400 uppercase text-[9px] tracking-wider mb-1">
-                            Size range
+                            Portfolio range
                           </dt>
                           <dd className="text-navy font-bold leading-tight">{activeProduct.sizeRange}</dd>
                         </div>
                         <div className="border-t border-slate-200 pt-3 mt-1">
                           <dt className="text-slate-400 uppercase text-[9px] tracking-wider mb-1">
-                            Test Standard
+                            Verification
                           </dt>
-                          <dd className="text-navy font-bold leading-tight">API 598 / ISO 5208</dd>
+                          <dd className="text-navy font-bold leading-tight">Customer specification</dd>
                         </div>
                       </dl>
                     </div>
@@ -124,7 +124,7 @@ export function Products({ onConfigureValve }: ProductsProps) {
                     {/* Applications Tags */}
                     <div className="mb-8">
                       <h4 className="font-mono-data text-[10px] uppercase tracking-wider text-slate-400 mb-3">
-                        Primary Applications
+                        Typical Applications
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {activeProduct.applications.map((app) => (
@@ -151,7 +151,7 @@ export function Products({ onConfigureValve }: ProductsProps) {
                 <Button asChild variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 font-display py-6 px-6">
                   <a href="#resources">
                     <FileText className="mr-2 h-4 w-4" />
-                    Download Datasheet
+                    Company Profile
                   </a>
                 </Button>
               </div>
@@ -170,7 +170,7 @@ export function Products({ onConfigureValve }: ProductsProps) {
                 >
                   <img
                     src={activeProduct.image}
-                    alt={`${activeProduct.name} - industrial valve`}
+                    alt={`${activeProduct.name} process portfolio`}
                     className="w-full h-full object-cover opacity-80"
                     loading="lazy"
                   />
@@ -182,11 +182,11 @@ export function Products({ onConfigureValve }: ProductsProps) {
               {/* Crop marks overlay on image */}
               <div className="absolute inset-4 border border-white/10 pointer-events-none" />
               <div className="absolute top-6 left-6 font-mono-data text-[9px] text-white/50 tracking-widest uppercase">
-                FIG. {activeProduct.slug.replace("-", "_").toUpperCase()}_DETAIL
+                PROCESS. {activeProduct.slug.replace("-", "_").toUpperCase()}
               </div>
 
               <div className="absolute bottom-6 right-6 font-mono-data text-[10px] text-accent font-bold bg-navy-950/80 backdrop-blur px-2.5 py-1 rounded border border-white/10">
-                {activeProduct.sizeRange} / {activeProduct.pressureRating}
+                {activeProduct.sizeRange}
               </div>
             </div>
           </div>

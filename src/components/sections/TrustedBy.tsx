@@ -10,7 +10,7 @@ const STEPS = [
   {
     icon: MessageSquareText,
     title: "Clarify the duty",
-    text: "RR Engineering reviews the application before confirming the most suitable construction.",
+    text: "Raghav Engineering reviews the application before confirming the most suitable construction.",
   },
   {
     icon: FileCheck2,

@@ -7,9 +7,9 @@ export function Industries() {
     <section id="industries" className="bg-white py-24 sm:py-32">
       <div className="container">
         <SectionHeading
-          eyebrow="Industries Served"
-          title="Built for the industries that can't afford failure"
-          description="Our valves operate in environments where downtime carries real cost — we engineer accordingly."
+          eyebrow="Applications Served"
+          title="Applications supported by the official company profile"
+          description="The supplied profile references oil and energy, petrochemical, power generation, cryogenic, nuclear areas and valve component applications."
           className="mb-16"
         />
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">

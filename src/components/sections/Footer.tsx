@@ -17,12 +17,11 @@ export function Footer() {
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-white">
                 <Gauge className="h-5 w-5" strokeWidth={2.25} />
               </span>
-              <span className="font-display font-semibold text-lg">RR Engineering Works</span>
+              <span className="font-display font-semibold text-lg">Raghav Engineering</span>
             </a>
             <p className="text-sm text-white/60 leading-relaxed max-w-sm mb-6">
-              Precision industrial valve manufacturing from Kanchipuram, Tamil Nadu —
-              serving oil &amp; gas, petrochemical, power, marine and process industries
-              across domestic and export markets.
+              Industry specialised in nickel based overlay cladding, cobalt based hard facing,
+              advanced welding, fabrication and precision machining from Alapakkam, Chennai.
             </p>
             <div className="flex gap-3">
               {[
@@ -30,10 +29,12 @@ export function Footer() {
                 { icon: YouTubeIcon, href: COMPANY.social.youtube, label: "YouTube" },
                 { icon: TwitterIcon, href: COMPANY.social.twitter, label: "Twitter" },
                 { icon: FacebookIcon, href: COMPANY.social.facebook, label: "Facebook" },
-              ].map(({ icon: Icon, href, label }) => (
+              ].filter(({ href }) => href && href !== "#").map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-white/70 hover:bg-accent hover:text-white transition-colors"
                 >

@@ -26,13 +26,12 @@ export function Resources() {
   };
 
   const triggerFileDownload = (resource: Resource) => {
-    // In a production app, this would trigger a download link:
-    // window.open(`/downloads/${resource.id}.pdf`, "_blank");
-    
-    // Design simulation: trigger a download log / mock action
-    console.log(`Downloading: ${resource.title}`);
-    
-    // Show download prompt info
+    if (resource.href.startsWith("#")) {
+      setActiveDownload(null);
+      document.querySelector(resource.href)?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    window.open(resource.href, "_blank", "noopener,noreferrer");
     setDownloadSuccess(true);
     
     setTimeout(() => {
@@ -61,8 +60,8 @@ export function Resources() {
       <div className="container relative z-10">
         <SectionHeading
           eyebrow="Technical Resources"
-          title="Access Engineering Specifications &amp; Design Catalogues"
-          description="Download dimensional sheets, material charts, standard ratings, and installation procedures compiled by our engineering team."
+          title="Access the official profile and RFQ references"
+          description="Only client-supplied or clearly marked internal resources are shown here. Unsupported datasheets and catalogues have been removed."
           className="mb-16"
         />
 
@@ -77,7 +76,7 @@ export function Resources() {
                   <FileText className="h-5.5 w-5.5" />
                 </div>
                 <span className="font-mono-data text-[10px] text-accent uppercase tracking-widest font-bold">
-                  {resource.fileType} · {resource.fileSize}
+                  {resource.fileType} / {resource.fileSize}
                 </span>
                 <h3 className="font-display font-semibold text-navy text-lg mt-2 mb-2">
                   {resource.title}
@@ -139,7 +138,7 @@ export function Resources() {
                     Preparing Download
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 max-w-xs leading-relaxed font-mono-data mb-4">
-                    Preparing standard {activeDownload.title}.pdf ({activeDownload.fileSize}) for delivery.
+                    Opening {activeDownload.title} ({activeDownload.fileSize}).
                   </p>
                   <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
                     <motion.div
@@ -150,7 +149,7 @@ export function Resources() {
                     />
                   </div>
                   <span className="text-[10px] text-green-600 font-bold mt-4 font-mono-data flex items-center gap-1.5">
-                    <ShieldCheck className="h-4 w-4" /> Material verification complete
+                    <ShieldCheck className="h-4 w-4" /> Client-supplied resource
                   </span>
                 </div>
               ) : (
@@ -167,7 +166,7 @@ export function Resources() {
                     Download Specifications
                   </h3>
                   <p className="text-xs text-slate-500 leading-relaxed mb-6">
-                    Enter your professional business email and company name to immediately unlock access to our technical catalog sheets.
+                    Enter your professional business email and company name to access the selected resource.
                   </p>
 
                   <form onSubmit={handleGatedSubmit} className="flex flex-col gap-4">

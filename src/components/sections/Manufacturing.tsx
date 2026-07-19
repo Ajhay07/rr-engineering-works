@@ -2,52 +2,46 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
-import { MANUFACTURING_STAGES, PRODUCTION_STATS } from "@/data/content";
-import { CheckCircle2, Shield, Settings, Factory, TrendingUp, Users } from "lucide-react";
+import { MANUFACTURING_STAGES, PRODUCTION_STATS, QAWT_NOTE, POSITIONER_CAPABILITY } from "@/data/content";
+import { CheckCircle2, Shield, Settings, Factory, TrendingUp, Users, Wrench } from "lucide-react";
 
 // Checklists for manufacturing stages to build high trust
 const STAGE_CHECKLISTS: Record<string, string[]> = {
-  cnc: [
-    "Multi-axis CNC dimensional checking to tolerance of +/-0.02mm",
-    "Surface roughness testing (Ra 1.6 - Ra 3.2 parameters)",
-    "Thread caliper validation (ASME B1.20.1 NPT & BSPT)",
-    "Trim seat seat angle verification",
+  "welding-automation": [
+    "GTAW, SMAW, GMAW, FCAW, PTAW and SAW capability referenced in the profile",
+    "AUTO-MIG, Hot Wire TIG and robotic TIG/MIG capability referenced",
+    "Work carried out according to customer specification and requirement",
+    "Technically skilled welding and quality engineers referenced in the profile",
   ],
-  casting: [
-    "Spectrometer chemical analysis checks for every heat batch",
-    "Physical tensile and hardness testing of test bars",
-    "Visual casting inspection conforming to MSS SP-55 standards",
-    "Dye penetrant inspection (DP) on critical surface areas",
+  overlay: [
+    "Nickel based overlay cladding",
+    "Cobalt based hard facing",
+    "SAW, PTAW, AUTO-TIG and AUTO-MIG overlay portfolio references",
+    "Valve component and spool joint portfolio examples from the PDF",
   ],
-  testing: [
-    "100% hydrostatic shell testing at 1.5x pressure class rating",
-    "100% hydrostatic/pneumatic seat leakage validation per API 598",
-    "Low-pressure air seat test checking at 80 psi (6 bar)",
-    "Witness testing option for third-party inspectors (TUV, SGS)",
+  machining: [
+    "CNC turning lathe",
+    "Vertical milling center",
+    "Horizontal boring machine and vertical turret lathe",
+    "Centre lathe, planning machine and radial drilling machine",
   ],
-  assembly: [
-    "Controlled torque assembly for bonnet bolting per specifications",
-    "Stem packing installation using pre-formed graphitic rings",
-    "Manual and actuator alignment calibration checks",
-    "Antistatic device electrical resistance check",
+  "heat-treatment": [
+    "Heat treatment process is listed under factory facilities",
+    "Used where required by cladding or welding procedure",
+    "Process route depends on customer specification",
+    "Final requirements must be confirmed per project",
   ],
   inspection: [
-    "EN 10204 3.1 material test certificate compilation",
-    "Visual and dimensional final check matching client GA drawings",
-    "Casting thickness verification using ultrasonic thickness gauges",
-    "Nameplate details and heat code stamping audits",
+    "ISO 9001:2015 certified organization stated in the profile",
+    "CMM inspection referenced in the profile",
+    "Welding to radiographic quality referenced",
+    "Production, testing, certification and documentation support",
   ],
-  packing: [
-    "Flange face raised-edge protection using robust wood/plastic caps",
-    "Vapor Corrosion Inhibitor (VCI) desiccant placement in port holes",
-    "Seaworthy heat-treated wooden crate packing (ISPM 15 compliant)",
-    "Rigid heavy-duty polythene wrapping for moisture prevention",
-  ],
-  shipping: [
-    "Detailed commercial packing list and custom documentation dispatch",
-    "Consolidation support for domestic and international export hubs",
-    "Real-time dispatch tracing and freight forwarder coordination",
-    "FOB, CIF, and DDP shipping terms documentation support",
+  fabrication: [
+    "Fabrication of gate and other valve types shown in the process portfolio",
+    "Body + spool joint welding",
+    "Bypass welding of valve assembly to RT quality",
+    "Assembly welding with dissimilar grades",
   ],
 };
 
@@ -66,9 +60,9 @@ export function Manufacturing() {
 
       <div className="container relative z-10">
         <SectionHeading
-          eyebrow="Inside Kanchipuram Plant"
-          title="Bespoke Production &amp; QA Control Under One Roof"
-          description="We control the entire valve manufacturing process. From foundry casting audits to final packaging, precision is verified at every stage."
+          eyebrow="Inside Alapakkam, Chennai Facility"
+          title="Welding, cladding and machining capability under one roof"
+          description="The official profile lists advanced welding automation, overlay processes, CNC machining, heat treatment and quality inspection at the Alapakkam, Chennai facility."
           light
           className="mb-16"
         />
@@ -135,7 +129,7 @@ export function Manufacturing() {
                   <div className="flex items-center gap-2 mb-4 text-accent">
                     <Shield className="h-4 w-4" />
                     <span className="font-mono-data text-[10px] uppercase tracking-widest font-bold">
-                      QA Audit Stage {activeStageIdx + 1}
+                      Facility Stage {activeStageIdx + 1}
                     </span>
                   </div>
 
@@ -149,7 +143,7 @@ export function Manufacturing() {
                   {/* Dynamic checklist */}
                   <div>
                     <h4 className="font-mono-data text-[10px] text-white/40 uppercase tracking-widest mb-3">
-                      Quality Audit Checklist
+                      PDF-backed capability notes
                     </h4>
                     <ul className="flex flex-col gap-2.5">
                       {checklist.map((item, i) => (
@@ -185,6 +179,36 @@ export function Manufacturing() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Additional PDF-Verified Capabilities */}
+        <div className="mt-16 grid sm:grid-cols-2 gap-6">
+          <Reveal>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Wrench className="h-5 w-5 text-accent" />
+                <span className="font-mono-data text-[10px] uppercase tracking-widest text-accent font-bold">
+                  Equipment Capability
+                </span>
+              </div>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {POSITIONER_CAPABILITY}
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Shield className="h-5 w-5 text-accent" />
+                <span className="font-mono-data text-[10px] uppercase tracking-widest text-accent font-bold">
+                  QAWT Reference
+                </span>
+              </div>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {QAWT_NOTE}
+              </p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

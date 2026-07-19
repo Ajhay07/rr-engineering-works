@@ -59,9 +59,9 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
             </div>
             <div>
               <dt className="font-mono-data text-[10px] uppercase tracking-wider text-steel">
-                Pressure Rating
+                Process
               </dt>
-              <dd className="font-mono-data text-xs text-navy mt-0.5">{product.pressureRating}</dd>
+              <dd className="font-mono-data text-xs text-navy mt-0.5">{product.process}</dd>
             </div>
           </dl>
 

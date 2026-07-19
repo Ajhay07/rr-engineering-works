@@ -3,16 +3,15 @@ import { motion } from "framer-motion";
 import { Shield, Settings, Cpu, FileCheck } from "lucide-react";
 
 const LOGS = [
-  "INITIALIZING INDUSTRIAL VALVE PORTAL...",
+  "INITIALIZING ENGINEERING PORTAL...",
   "CONNECTING TO MANUFACTURING DATABASE...",
-  "LOADING COMPONENT: CAD VECTOR ENGINE...",
-  "VERIFYING ISO 9001:2015 COMPLIANCE CERTIFICATION...",
-  "CHECKING API 6D DESIGN STANDARDS...",
+  "LOADING WELDING & CLADDING CAPABILITY PROFILES...",
+  "VERIFYING ISO 9001:2015 QUALITY MANAGEMENT...",
   "ESTABLISHING SECURE RFQ TRANSMISSION PIPELINE...",
-  "CALIBRATING MATERIAL TRACEABILITY DATASETS (EN 10204 3.1)...",
-  "FETCHING GEOLOCATION: MARAIMALAI NAGAR FACILITY...",
-  "CALCULATING ANNUAL VALVE PRODUCTION CAPACITY...",
-  "SYNCHRONIZING VALVE CONFIGURATOR MODULES...",
+  "LOADING MATERIAL TRACEABILITY DATASETS...",
+  "FETCHING GEOLOCATION: ALAPAKKAM, CHENNAI FACILITY...",
+  "LOADING OVERLAY CLADDING PROCESS PORTFOLIO...",
+  "SYNCHRONIZING RFQ CONFIGURATOR MODULES...",
   "SYSTEM CHECK OK. PORTAL ONLINE.",
 ];
 
@@ -84,10 +83,10 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         {/* Brand Name */}
         <div className="text-center mb-10">
           <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight uppercase">
-            RR Engineering <span className="text-accent">Works</span>
+            Raghav <span className="text-accent">Engineering</span>
           </h2>
           <p className="font-mono-data text-[10px] uppercase tracking-[0.2em] text-white/50 mt-1">
-            Precision Valve Manufacturing Portal
+            Overlay Cladding & Specialised Welding Portal
           </p>
         </div>
 
