@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Reveal } from "@/components/ui/reveal";
 import { PROCESS_PORTFOLIO } from "@/data/content";
 
 const CATEGORIES = Array.from(new Set(PROCESS_PORTFOLIO.map((item) => item.category)));

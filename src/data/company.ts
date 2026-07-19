@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Atom,
   Cog,
   Factory,
