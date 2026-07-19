@@ -5,9 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --border: 214 32% 91%;
+  --border: 0 0% 88%;
   --background: 0 0% 100%;
-  --foreground: 210 40% 12%;
+  --foreground: 0 0% 10%;
+  --brand: 4 67% 32%;
+  --brand-dark: 4 65% 25%;
+  --brand-light: 4 55% 44%;
 }
 
 * {
@@ -20,7 +23,7 @@ html {
 
 body {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  color: #0f2438;
+  color: #1A1A1A;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
@@ -37,7 +40,7 @@ body {
 }
 
 ::selection {
-  background-color: #f2730a;
+  background-color: #86201B;
   color: #ffffff;
 }
 
@@ -48,7 +51,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #f2730a;
+  outline: 2px solid #86201B;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -76,21 +79,21 @@ select:focus-visible,
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f2730a;
+  background: #86201B;
 }
 
 /* Blueprint grid background utility */
 .bg-blueprint {
   background-image:
-    linear-gradient(rgba(11, 79, 156, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 79, 156, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(134, 32, 27, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(134, 32, 27, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .bg-blueprint-dark {
   background-image:
-    linear-gradient(rgba(242, 115, 10, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(242, 115, 10, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(134, 32, 27, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(134, 32, 27, 0.03) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -110,20 +113,20 @@ select:focus-visible,
 .crop-marks::before {
   top: -1px;
   left: -1px;
-  border-top: 2px solid #f2730a;
-  border-left: 2px solid #f2730a;
+  border-top: 2px solid #86201B;
+  border-left: 2px solid #86201B;
 }
 .crop-marks::after {
   bottom: -1px;
   right: -1px;
-  border-bottom: 2px solid #f2730a;
-  border-right: 2px solid #f2730a;
+  border-bottom: 2px solid #86201B;
+  border-right: 2px solid #86201B;
 }
 
 /* Technical metal/glow cards */
 .glow-card {
   position: relative;
-  background: rgba(3, 8, 14, 0.6);
+  background: rgba(10, 10, 10, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -134,7 +137,7 @@ select:focus-visible,
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(242, 115, 10, 0.4) 0%, rgba(11, 79, 156, 0) 50%, rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(134, 32, 27, 0.4) 0%, rgba(134, 32, 27, 0) 50%, rgba(255, 255, 255, 0.05) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -143,8 +146,8 @@ select:focus-visible,
   transition: opacity 0.3s ease;
 }
 .glow-card:hover {
-  border-color: rgba(242, 115, 10, 0.3);
-  box-shadow: 0 0 25px rgba(242, 115, 10, 0.15);
+  border-color: rgba(134, 32, 27, 0.3);
+  box-shadow: 0 0 25px rgba(134, 32, 27, 0.15);
   transform: translateY(-2px);
 }
 .glow-card:hover::after {
@@ -181,9 +184,5 @@ select:focus-visible,
 }
 
 .text-glow {
-  text-shadow: 0 0 10px rgba(242, 115, 10, 0.5);
-}
-
-.text-glow-blue {
-  text-shadow: 0 0 10px rgba(11, 79, 156, 0.5);
+  text-shadow: 0 0 10px rgba(134, 32, 27, 0.5);
 }

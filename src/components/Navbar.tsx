@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Gauge, Phone, Mail, Award, MessageSquare, Download } from "lucide-react";
+import { Menu, X, Phone, Mail, Award, MessageSquare, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
@@ -63,14 +63,18 @@ export function Navbar() {
             className="flex items-center gap-3 shrink-0 group"
             aria-label={`${COMPANY.name} home`}
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-white group-hover:scale-105 transition-transform duration-300 shadow-glow">
-              <Gauge className="h-5.5 w-5.5" strokeWidth={2.25} />
+            <span className="flex h-11 w-11 items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/brand/raghav-engineering-logo.png"
+                alt="Raghav Engineering"
+                className="h-11 w-auto"
+              />
             </span>
             <span className="flex flex-col leading-none">
               <span className="font-display font-bold text-base sm:text-lg tracking-tight text-white">
                 {COMPANY.shortName}
               </span>
-              <span className="font-mono-data text-[10px] uppercase tracking-[0.14em] text-accent mt-0.5">
+              <span className="font-mono-data text-[10px] uppercase tracking-[0.14em] text-brand-200 mt-0.5">
                 {COMPANY.foundedDisplay}
               </span>
             </span>

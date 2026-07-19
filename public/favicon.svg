@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <rect width="48" height="48" rx="10" fill="#0B4F9C"/>
-  <circle cx="24" cy="24" r="13" fill="none" stroke="#ffffff" stroke-width="2.4"/>
-  <path d="M24 24 L24 15.5" stroke="#F2730A" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M24 24 L30 28" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
-  <circle cx="24" cy="24" r="2.2" fill="#ffffff"/>
-</svg>
+<svg xmlns=" http://www.w3.org/2000/svg\ viewBox=\0 0 48 48\><rect width=\48\ height=\48\ rx=\10\ fill=\#86201B\/><text x=\24\ y=\32\ text-anchor=\middle\ font-family=\sans-serif\ font-weight=\800\ font-size=\24\ fill=\#fff\>RE</text></svg>

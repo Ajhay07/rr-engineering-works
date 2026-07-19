@@ -82,9 +82,13 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
         {/* Brand Name */}
         <div className="text-center mb-10">
-          <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight uppercase">
-            Raghav <span className="text-accent">Engineering</span>
-          </h2>
+          <div className="flex justify-center mb-4">
+            <img
+              src="/brand/raghav-engineering-logo.png"
+              alt="Raghav Engineering"
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="font-mono-data text-[10px] uppercase tracking-[0.2em] text-white/50 mt-1">
             Overlay Cladding & Specialised Welding Portal
           </p>

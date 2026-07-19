@@ -1,4 +1,3 @@
-import { Gauge } from "lucide-react";
 import { LinkedInIcon, YouTubeIcon, TwitterIcon, FacebookIcon } from "@/components/ui/social-icons";
 import { COMPANY } from "@/data/site";
 import { PRODUCTS } from "@/data/products";
@@ -14,8 +13,12 @@ export function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2.5 mb-5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-white">
-                <Gauge className="h-5 w-5" strokeWidth={2.25} />
+              <span className="flex h-10 w-10 items-center justify-center">
+                <img
+                  src="/brand/raghav-engineering-logo.png"
+                  alt="Raghav Engineering"
+                  className="h-10 w-auto"
+                />
               </span>
               <span className="font-display font-semibold text-lg">Raghav Engineering</span>
             </a>
