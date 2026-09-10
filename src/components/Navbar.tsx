@@ -77,9 +77,9 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const elements = ANCHOR_IDS.map((id) => document.getElementById(id)).filter(
-      Boolean
-    );
+    const elements = ANCHOR_IDS
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
     if (!elements.length) return undefined;
     const observer = new IntersectionObserver(
       (entries) => {
