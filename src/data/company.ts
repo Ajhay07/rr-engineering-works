@@ -54,6 +54,7 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
   { label: "Capabilities", href: "#products" },
   { label: "RFQ", href: "#configurator" },
   { label: "Facilities", href: "#manufacturing" },
@@ -62,6 +63,7 @@ export const NAV_LINKS = [
   { label: "Applications", href: "#industries" },
   { label: "Resources", href: "#resources" },
   { label: "Contact", href: "#contact" },
+  { label: "Client Portal", href: "/client-portal" },
 ];
 
 export const HERO_METRICS = [

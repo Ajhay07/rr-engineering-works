@@ -1,5 +1,6 @@
 import { ArrowRight, ClipboardCheck, Factory, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { IndustrialBackground } from "@/components/ui/industrial-background";
 import { COMPANY, HERO_METRICS } from "@/data/company";
 
 export function Hero() {
@@ -14,18 +15,9 @@ export function Hero() {
     }
   };
 
-  return (
-    <section id="home" className="relative overflow-hidden bg-[#111820] pt-28 text-white sm:pt-32">
-      <div className="absolute inset-0" aria-hidden="true">
-        <img
-          src="/company-profile/pdf-page-06-image-01.jpg"
-          alt=""
-          className="h-full w-full object-cover opacity-24"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111820] via-[#111820]/92 to-[#111820]/72" />
-      </div>
-
-      <div className="container relative grid min-h-[calc(100vh-3rem)] items-center gap-10 pb-12 lg:grid-cols-[1fr_430px]">
+    return (
+    <IndustrialBackground id="home">
+      <div className="container relative z-10 grid min-h-[calc(100vh-3rem)] items-center gap-10 pb-12 lg:grid-cols-[1fr_430px]">
         <div className="max-w-3xl py-12 sm:py-16">
           <div className="mb-6 inline-flex items-center gap-3 border-l-2 border-accent bg-white/7 px-4 py-2">
             <Factory className="h-4 w-4 text-accent" />
@@ -114,6 +106,6 @@ export function Hero() {
           </a>
         </aside>
       </div>
-    </section>
+        </IndustrialBackground>
   );
 }
