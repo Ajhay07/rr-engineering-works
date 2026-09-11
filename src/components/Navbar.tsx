@@ -133,7 +133,7 @@ export function Navbar() {
         )}
       >
         <nav
-          className="container flex h-20 items-center justify-between"
+          className="container flex h-20 items-center justify-between gap-6"
           aria-label="Primary navigation"
         >
           <Link
@@ -158,7 +158,7 @@ export function Navbar() {
               </span>
             </span>
           </Link>
-                    <ul className="hidden lg:flex items-center gap-8">
+                    <ul className="hidden xl:flex items-center gap-5 2xl:gap-7">
             {NAV_LINKS.slice(0, NAV_LINKS.length - 1).map((link) => (
               <li key={link.href}>
                 <NavLinkItem
@@ -171,7 +171,7 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden xl:flex items-center gap-3 shrink-0">
             <Button
               variant="outline"
               size="sm"
@@ -197,7 +197,7 @@ export function Navbar() {
 
           <button
             className={cn(
-              "lg:hidden flex h-11 w-11 items-center justify-center rounded-lg transition-colors border text-white",
+              "xl:hidden flex h-11 w-11 items-center justify-center rounded-lg transition-colors border text-white",
               mobileOpen
                 ? "border-white/20 bg-white/10"
                 : "border-white/10 bg-white/5 hover:bg-white/10"
@@ -215,14 +215,14 @@ export function Navbar() {
         {mobileOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm xl:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
             />
             <motion.aside
-              className="fixed top-0 right-0 z-50 flex h-full w-80 max-w-[85vw] flex-col gap-6 overflow-y-auto bg-navy-950 border-l border-slate-800 p-6 shadow-soft lg:hidden"
+              className="fixed top-0 right-0 z-50 flex h-full w-80 max-w-[85vw] flex-col gap-6 overflow-y-auto bg-navy-950 border-l border-slate-800 p-6 shadow-soft xl:hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

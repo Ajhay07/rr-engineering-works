@@ -55,12 +55,17 @@ export function Hero() {
 
           <div className="mt-12 grid max-w-3xl grid-cols-2 border-y border-white/12 sm:grid-cols-4">
             {HERO_METRICS.map((metric) => (
-              <div key={metric.label} className="border-white/12 py-5 pr-5 sm:border-r sm:last:border-r-0">
-                <div className="font-display text-2xl font-semibold text-white sm:text-3xl">
+              <div
+                key={metric.label}
+                className="flex flex-col border-white/12 py-5 pr-5 sm:border-r sm:last:border-r-0"
+              >
+                <div className="font-display text-2xl font-semibold leading-none text-white sm:text-3xl">
                   {metric.value}
                   {"suffix" in metric ? metric.suffix : ""}
                 </div>
-                <div className="mt-1 text-xs leading-snug text-white/58">{metric.label}</div>
+                <div className="mt-2 min-h-[2.25rem] text-xs leading-snug text-white/58 sm:min-h-[2rem]">
+                  {metric.label}
+                </div>
               </div>
             ))}
           </div>
